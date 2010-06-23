@@ -13,7 +13,6 @@ class ClientsController < ApplicationController
   # GET /clients/1
   # GET /clients/1.xml
   def show
-    debugger
     @client = Client.find(params[:id])
 
     respond_to do |format|
