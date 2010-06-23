@@ -1,4 +1,6 @@
 OctopusReplicationExample::Application.routes.draw do |map|
+  resources :clients
+
   resources :users
 
   # The priority is based upon order of creation:
