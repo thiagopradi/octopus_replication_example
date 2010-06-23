@@ -2,7 +2,7 @@ source 'http://rubygems.org'
 
 gem 'rails', '3.0.0.beta4'
 gem 'mysql'
-gem 'ar-octopus', '0.0.5'
+gem 'ar-octopus', '0.0.5', :require => "octopus"
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
