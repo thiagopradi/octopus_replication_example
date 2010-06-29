@@ -1,5 +1,5 @@
 class CreateUsers < ActiveRecord::Migration
-  using(:master, :slave1, :slave2, :slave3, :slave4)
+ # using(:master, :slave1, :slave2, :slave3, :slave4)
   
   def self.up
     create_table :users do |t|

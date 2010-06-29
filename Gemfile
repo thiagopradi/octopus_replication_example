@@ -1,8 +1,8 @@
 source 'http://rubygems.org'
 
 gem 'rails', '3.0.0.beta4'
-gem 'mysql'
-gem 'ar-octopus', '0.0.8', :require => "octopus"
+gem 'mysql', '2.8.1'
+gem 'ar-octopus', '0.0.11', :require => "octopus"
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
@@ -23,6 +23,12 @@ gem 'ruby-debug'
 
 # Bundle gems for certain environments:
 # gem 'rspec', :group => :test
-# group :test do
-#   gem 'webrat'
-# end
+group :test do
+  gem "rspec-rails", ">= 2.0.0.beta"
+  gem 'capybara'
+  gem 'database_cleaner'
+  gem 'cucumber-rails'
+  gem 'cucumber'
+  gem 'spork'
+  gem 'launchy'
+end

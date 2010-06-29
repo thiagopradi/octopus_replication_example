@@ -1,14 +1,10 @@
-#This is the master database
+# This is the master database
 development:
   adapter: mysql
   host: localhost
   database: octopus_replication_1
-
-# Warning: The database defined as "test" will be erased and
-# re-generated from your development database when you run "rake".
-# Do not set this db to the same as development or production.
+# Test database.
 test:
   adapter: mysql
   host: localhost
-  database: octopus_replication_1
-
+  database: octopus_replication_test

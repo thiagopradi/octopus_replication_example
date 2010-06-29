@@ -1,0 +1,62 @@
+<h1> Octopus  Replication Example </h1>
+
+<p> This is a sample rails application demonstrating replication features in octopus. The application have 1 master, (specified in database.yml) and 4 slaves (specified in shards.yml).</p>
+
+<h2>Feature list: </h2>
+
+<p> All writes will be sent to master, and the read queries will be sent to the slaves. unless you have a transaction, so , all queries will be sent to master.</p>
+
+<h2> How-to </h2>
+<p>Octopus is simple to use, just follow the steps:</p>
+- Add the gem to your Gemfile:
+
+<pre>gem 'ar-octopus', '0.0.11', :require => "octopus"</pre>
+
+- Create a shards.yml file inside config directory, that looks like this:
+
+<pre> 
+development:
+  replicated: true
+  shards:
+    slave1:
+      adapter: mysql
+      host: localhost
+      database: octopus_replication_2
+    slave2:
+      adapter: mysql
+      host: localhost
+      database: octopus_replication_3
+    slave3:
+      adapter: mysql
+      host: localhost
+      database: octopus_replication_4
+    slave4:
+      adapter: mysql
+      host: localhost
+      database: octopus_replication_5
+</pre>
+
+<p> First, you need to specify what enviroment will have the slaves. After this, the line replicated means that you have replicated databases. Above this, you need to specify the name and the address of your slaves.</p>
+<p>If you want all models of your application to be replicated, add the following line to shards.yml:</p>
+
+<pre>entire_replicated: true</pre>
+
+<p> If your application isn't have all models replicated (like this example), you need to specify each replicated model with this line:</p>
+
+<pre> 
+class User < ActiveRecord::Base
+  replicated_model
+end
+</pre>
+
+
+<p>More info could be found at <a href="http://wiki.github.com/tchandy/octopus/">Octopus Wiki</a> </p>
+
+<h2>Thanks</h2>
+
+This project is sponsored by the <a href="http://www.rubysoc.org">Ruby Summer of Code</a>,
+and my mentors <a href="http://github.com/mperham">Mike Perham</a> and <a href="http://github.com/amitagarwal">Amit Agarwal</a>.
+
+<h2>Copyright</h2>
+
+Copyright (c) 2010 Thiago Pradi, released under the MIT license.
