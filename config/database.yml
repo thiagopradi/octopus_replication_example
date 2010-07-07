@@ -1,10 +1,13 @@
 # This is the master database
 development:
   adapter: mysql
-  host: localhost
+  username: root
+  password: 
   database: octopus_replication_1
+
 # Test database.
 test:
   adapter: mysql
-  host: localhost
+  username: root
+  password: 
   database: octopus_replication_test

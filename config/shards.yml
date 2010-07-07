@@ -1,4 +1,4 @@
-development:
+octopus:
   replicated: true
   shards:
     slave1:
