@@ -5,6 +5,7 @@
 <h2>Feature list: </h2>
 
 <p> All writes will be sent to master, and the read queries will be sent to the slaves. unless you have a transaction, so , all queries will be sent to master.</p>
+<p> The application have two different models: Client and User. User is a replicated model, and Client isn't replicated. So, when you create a new User, you will see a exception, because you don't have configuration for replication and Rails tries to read the user from a slave database, and the write query have been sent to master (Default behaviour when using replication). When you create a new client, everything should works fine, it will read and write in the master database. </p>
 
 <h2> Setup: </h2>
 <p> You will need two commands to setup the application:</p>
