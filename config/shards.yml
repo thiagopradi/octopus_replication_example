@@ -1,23 +1,22 @@
 octopus:
   replicated: true
-  octopus_enviroments:
+  enviroments:
     - development
     - production
   development:
-    shards:
-      slave1:
-        adapter: mysql
-        host: localhost
-        database: octopus_replication_2
-      slave2:
-        adapter: mysql
-        host: localhost
-        database: octopus_replication_3
-      slave3:
-        adapter: mysql
-        host: localhost
-        database: octopus_replication_4
-      slave4:
-        adapter: mysql
-        host: localhost
-        database: octopus_replication_5
+    slave1:
+      adapter: mysql
+      host: localhost
+      database: octopus_replication_2
+    slave2:
+      adapter: mysql
+      host: localhost
+      database: octopus_replication_3
+    slave3:
+      adapter: mysql
+      host: localhost
+      database: octopus_replication_4
+    slave4:
+      adapter: mysql
+      host: localhost
+      database: octopus_replication_5
